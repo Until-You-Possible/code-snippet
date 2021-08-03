@@ -98,3 +98,31 @@ function isValidDecimal(chars) {
         return true;
     }
 }
+
+/**
+ * 随机生成颜色
+ * @returns {string}
+ */
+
+function getRandomColor () {
+    const rgb = []
+    for (let i = 0 ; i < 3; ++i){
+        let color = Math.floor(Math.random() * 256).toString(16);
+        color = color.length === 1 ? '0' + color : color;
+        rgb.push(color);
+    }
+    return '#' + rgb.join('');
+}
+
+/**
+ * 判断微信浏览器
+ * @returns {Boolean}
+ */
+function isWeiXin() {
+    const ua = window.navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) === 'micromessenger') {
+        return true;
+    } else {
+        return false;
+    }
+}
